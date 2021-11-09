@@ -1,0 +1,30 @@
+<div class="col-md-12">
+    <div class="card card-container">
+        <form>
+            <label for="theater">Select Theater</label>
+            <select class="form-control" >
+                <option value="default"> --- </option>
+                <option 
+                    *ngFor="let theater of theaters">
+                Theater {{theater[0]}}
+                </option>
+            </select>
+            <button type="button" class="navbar dropdown-menu">
+                Submit
+            </button>
+        </form>
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Movie</th>
+                <th>Seats Available</th>
+            </tr>
+            <tr *ngFor="let showing of showings">
+                <th>{{showing[2]}}</th>
+                <th>{{theaters[showing[1]].movie}}</th>
+                <th>{{theaters[showing[1]].maxCapacity - showing[3]}}</th>
+                <th><button type="button" class="navbar dropdown-menu">Select Showing</button></th>
+            </tr>
+        </table>
+    </div>
+</div>
