@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'movie-booking';
   userId?: string;
   email?: string;
+  username?: string;
 
   constructor(private tokenStorageService: TokenStorageService) { }
 
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit {
       const user = this.tokenStorageService.getUser();
       this.userId = user.userId;
       this.email = user.email;
+      this.username = user.username;
     }
   }
 

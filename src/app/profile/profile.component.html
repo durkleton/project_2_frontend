@@ -3,7 +3,7 @@
       <h3>
 <!-- Want to use user ID at the top, but if that doesnt work use email-->
 <!--       <strong>{{ currentUser.email }}</strong> Profile -->
-        <strong>{{ currentUser.userId }}</strong> Profile
+        <strong>{{ currentUser.username }}</strong> Profile
       </h3>
     </header>
     <p>
@@ -15,10 +15,10 @@
       <strong>Email:</strong>
       {{ currentUser.email }}
     </p>
-    <strong>Roles:</strong>
+    <strong>User ID:</strong>
     <ul>
-      <li *ngFor="let role of currentUser.roles">
-        {{ role }}
+      <li>
+        {{ currentUser.userId }}
       </li>
     </ul>
   </div>

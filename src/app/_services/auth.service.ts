@@ -18,15 +18,16 @@ const httpOptions = {
 export class AuthService {
   constructor(private http: HttpClient) { }
 // Login Method
-  login(email: string, password: string): Observable<any> {
+  login(username: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'signin', {
-      email,
+      username,
       password
     }, httpOptions);
   }
 // Register Method
-  register(email: string, password: string): Observable<any> {
+  register(username: string, email: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'signup', {
+      username,
       email,
       password
     }, httpOptions);
