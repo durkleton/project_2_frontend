@@ -1,29 +1,33 @@
 <div class="col-md-12">
     <div class="card card-container">
-        <form>
-            <label for="theater">Select Theater</label>
-            <select class="form-control" >
-                <option value="default"> --- </option>
+        <h1>Booking Form</h1>
+        <form>    
+            <label for="theater">Available Theaters</label>
+            <select class="form-control" name="my-select" [(ngModel)]="mySelect" (change)="selectChange()">
                 <option 
+                    [value]="theater.theaterId"
                     *ngFor="let theater of theaters">
-                Theater {{theater[0]}}
+                Theater {{theater.theaterId}}
                 </option>
             </select>
-            <button type="button" class="navbar dropdown-menu">
-                Submit
-            </button>
         </form>
+        <label for="theater">Selected Theater: {{selectedValue.theaterId}}</label>
         <table>
             <tr>
                 <th>Time</th>
                 <th>Movie</th>
                 <th>Seats Available</th>
+                <th>Purchase</th>
             </tr>
             <tr *ngFor="let showing of showings">
-                <th>{{showing[2]}}</th>
-                <th>{{theaters[showing[1]].movie}}</th>
-                <th>{{theaters[showing[1]].maxCapacity - showing[3]}}</th>
-                <th><button type="button" class="navbar dropdown-menu">Select Showing</button></th>
+                <th>{{showing.time}}</th>
+                <th>{{selectedValue.movie}}</th>
+                <th>{{showing.currentCapacity}} / {{selectedValue.maxCapacity}}</th>
+                <th><button 
+                    type="button" 
+                    class="btn btn-primary btn-block" 
+                    *ngIf="selectedValue.maxCapacity == showing.currentCapacity"
+                    >Select Showing</button></th>
             </tr>
         </table>
     </div>
