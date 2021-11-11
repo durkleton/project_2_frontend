@@ -32,6 +32,6 @@ export class TheaterComponent implements OnInit {
   }
 
   selectChange() {
-    this.selectedValue = this.commonService.getDropDownText(this.mySelect, this.theaters)[0].name;
+    this.selectedValue = this.commonService.getDropDownText(this.mySelect, this.theaters)[0];
   }
 }

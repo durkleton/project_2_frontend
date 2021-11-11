@@ -3,7 +3,7 @@
       <h3>
 <!-- Want to use user ID at the top, but if that doesnt work use email-->
 <!--       <strong>{{ currentUser.email }}</strong> Profile -->
-        <strong>{{ currentUser.username }}</strong> Profile
+        <strong>{{ currentUser.username }}</strong>
       </h3>
     </header>
     <p>
@@ -15,12 +15,10 @@
       <strong>Email:</strong>
       {{ currentUser.email }}
     </p>
-    <strong>User ID:</strong>
-    <ul>
-      <li>
-        {{ currentUser.userId }}
-      </li>
-    </ul>
+    <p>
+      <strong>User ID:</strong>
+      {{ currentUser.userId }}
+    </p>
   </div>
   
   <ng-template #loggedOut>

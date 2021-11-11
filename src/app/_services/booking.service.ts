@@ -11,7 +11,7 @@ import { Ticket } from '../ticket';
 })
 export class BookingService {
 
-  endpoint = 'http://localhost:3000';
+  endpoint = 'http://localhost:9080/api';
 
   constructor(private httpClient: HttpClient) { }
 
